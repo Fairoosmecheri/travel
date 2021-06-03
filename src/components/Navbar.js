@@ -1,11 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
+import {useState} from 'react'
 const Navbar = () => {
+    const [colorChange, setColorchange] = useState(false);
+    const changeNavbarColor = () =>{
+        if(window.scrollY >= 50){
+        setColorchange(true);
+        console.log("hh")
+        }
+        else{
+        setColorchange(false);
+        console.log("DD")
+        }
+    };
+    window.addEventListener('scroll', changeNavbarColor);
     return (
-        <NavbarContainer>
+        <NavbarContainer colorChange = {colorChange}>
             <NavbarWrapper>
                 <NavbarLogo>
-                    travel
+                    travel. 
                 </NavbarLogo>
                 <NavbarMenu>
                     <a><span href="">Locations</span></a>
@@ -27,10 +40,13 @@ const Navbar = () => {
 export default Navbar
 
 const NavbarContainer = styled.div`
-    
     height: 5rem;
     width: 100vw;
     z-index: 10;
+    position: fixed;
+    top: 0;
+    background: ${({colorChange}) => (colorChange ? 'black' : 'transparent')};
+    transition: background 200ms ease;
 `
 const NavbarWrapper = styled.div`
     width: 90vw;
