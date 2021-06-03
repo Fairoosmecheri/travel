@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import HeroSection from './HeroSection'
 import { Locations } from './Locations'
 import styled from 'styled-components'
-
+import MyComponent from 'react-full-page-scroller'
 const Home = () => {
     return (
         <HomeContainer>

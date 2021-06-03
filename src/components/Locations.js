@@ -1,15 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
+import { LocationCard } from './LocationCard'
 
 export const Locations = () => {
     return (
         <LocationContainer>
-            sdsa
+            <LocationHeading>Locations</LocationHeading>
+            <LocationCardView>
+                <LocationCard />
+                <LocationCard />
+                <LocationCard />
+            </LocationCardView> 
         </LocationContainer>
     )
 }
 const LocationContainer = styled.div`
     width: 100vw;
-    height: 100vh; 
-    background: black;
+    height: calc(100vh - 5rem); 
+    color: white;
+    background: url('images/location-bg.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px 0;
+`
+const LocationCardView = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const LocationHeading = styled.h2`
+    font-size: 50px;
 `
