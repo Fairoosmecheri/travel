@@ -5,6 +5,7 @@ import { Locations } from './Locations'
 import styled from 'styled-components'
 import MyComponent from 'react-full-page-scroller'
 import Membership from './Membership'
+import Footer from './Footer'
 const Home = () => {
     return (
         <HomeContainer>
@@ -12,6 +13,7 @@ const Home = () => {
             <HeroSection />
             <Locations />
             <Membership />
+            <Footer />
         </HomeContainer>
     )
 }
