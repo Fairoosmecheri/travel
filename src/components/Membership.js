@@ -30,7 +30,7 @@ const MembershipContainer = styled.div`
     padding: 20px 0;
     @media screen and (max-width: 768px) {
         height: min-content;
-        
+        padding: 70px;
     }
 `
 const MembershipCardView = styled.div`
@@ -44,5 +44,6 @@ const MembershipCardView = styled.div`
 `
 const MembershipHeading = styled.h2`
     font-size: 50px;
+    font-family: 'Oswald', sans-serif;
     margin-top: 20px;
 `

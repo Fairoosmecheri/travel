@@ -31,6 +31,7 @@ const LocationContainer = styled.div`
 
     @media screen and (max-width: 768px) {
         height: min-content;
+        padding: 70px;
     }
 `
 const LocationCardView = styled.div`
@@ -45,5 +46,6 @@ const LocationCardView = styled.div`
 `
 const LocationHeading = styled.h2`
     font-size: 50px;
+    font-family: 'Oswald', sans-serif;
     margin-top: 20px;
 `

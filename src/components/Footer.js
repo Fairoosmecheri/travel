@@ -5,6 +5,7 @@ const Footer = (props) => {
     const locationRef = props.locationRef
     const membershipRef = props.membershipRef
     const heroRef = props.heroRef
+    const contactRef = props.contactRef
     const onLocationClick = () => {
         locationRef.current.scrollIntoView()
     }
@@ -13,6 +14,9 @@ const Footer = (props) => {
     }
     const onHomeClick = () => {
         heroRef.current.scrollIntoView()
+    }
+    const onContactClick = () => {
+        contactRef.current.scrollIntoView()
     }
     return (
         <FooterContainer>
@@ -26,13 +30,13 @@ const Footer = (props) => {
                     <span onClick={onHomeClick}>Home</span>
                     <span onClick={onLocationClick}>Locations</span>
                     <span onClick={onMembershipClick}>Memberships</span>
-                    <span>Contact Us</span>
+                    <span onClick={onContactClick}>Contact Us</span>
                 </Pages>
                 <Social>
                     <h3>Social Media</h3>
-                    <span><FaFacebookF /></span>
-                    <span><FaInstagram /></span>
-                    <span><FaYoutube /></span>
+                    <span className='fb'><FaFacebookF /></span>
+                    <span className='ig'><FaInstagram /></span>
+                    <span className='yt'><FaYoutube /></span>
                 </Social>
             </FooterContent>
             <Copyright>
@@ -88,10 +92,13 @@ const Pages = styled.div`
     display: flex;
     width: 100%;
     margin: 10px;
-    
+    font-family: 'Roboto', sans-serif;
     flex-direction: column;
     h3 {
+        padding-top: 10px;
         margin-bottom: 5px;
+        font-size: 20px;
+        font-weight: 700;
     }
     span {
         margin-top: 5px;
@@ -106,14 +113,34 @@ const Social = styled.div`
     padding-left: 1vw; 
     width: 100%;
     margin: 10px;
+    font-family: 'Roboto', sans-serif;
     h3 {
+        padding-top: 10px;
         margin-bottom: 5px;
+        font-size: 20px;
+        font-weight: 700;
     }
     span {
         margin-right: 8px;
+        font-size: 20px;
         cursor: pointer;
     }
     @media screen and (max-width: 1440px) {
         padding-left: 0;
+    }
+    .fb {
+        &:hover {
+            color: #4867AB;
+        }
+    }
+    .ig {
+        &:hover {
+            color: #E63D53;
+        }
+    }
+    .yt {
+        &:hover {
+            color: #ED3833;
+        }
     }
 `

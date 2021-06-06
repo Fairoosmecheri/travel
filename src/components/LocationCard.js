@@ -69,9 +69,10 @@ const CardImage = styled.div`
 const CardDescription = styled.p`
     margin-top: 15px;
     text-align: center;
+    font-size: 13.5px;
 `
 const CardButton = styled.span`
-    margin-top: 10px;
+    margin-top: 5px;
     cursor: pointer;
     background: #4CA95B;
     padding: 8px 30px;

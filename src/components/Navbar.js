@@ -9,24 +9,29 @@ const Navbar = (props) => {
     const changeNavbarColor = () =>{
         if(window.scrollY >= 50){
         setColorchange(true);
-        console.log("hh")
         }
         else{
         setColorchange(false);
-        console.log("DD")
         }
     };
     const locationRef = props.locationRef
     const membershipRef = props.membershipRef
     const heroRef = props.heroRef
+    const contactRef = props.contactRef
     const onLocationClick = () => {
         locationRef.current.scrollIntoView()
+        setMenuStatus(false)
     }
     const onMembershipClick = () => {
         membershipRef.current.scrollIntoView()
+        setMenuStatus(false)
     }
     const onLogoClick = () => {
         heroRef.current.scrollIntoView()
+    }
+    const onContactClick = () => {
+        contactRef.current.scrollIntoView()
+        setMenuStatus(false)
     }
     window.addEventListener('scroll', changeNavbarColor);
     return (
@@ -38,11 +43,11 @@ const Navbar = (props) => {
                 <NavbarMenu>
                     <a><span onClick={onLocationClick}>Locations</span></a>
                     <a><span onClick={onMembershipClick}>Membership</span></a>
-                    <a><span>Contact Us</span></a>
+                    <a><span onClick={onContactClick}>Contact Us</span></a>
                 </NavbarMenu>
                 <NavbarRightMenu>
                     <span>Login</span>
-                </NavbarRightMenu>
+                </NavbarRightMenu>  
                 <NavbarIcon>
                     <FiMenu onClick={() => setMenuStatus(true)} />
                 </NavbarIcon>
@@ -50,13 +55,14 @@ const Navbar = (props) => {
                     <MenuCloseButton>
                         <CgClose onClick={() => setMenuStatus(false)} /> 
                     </MenuCloseButton>
-                    <li><span>Locations</span></li>
-                    <li><span>Memberships</span></li>
-                    <li><span>Contact Us</span></li>
+                    <li><span onClick={onLocationClick}>Locations</span></li>
+                    <li><span onClick={onMembershipClick}>Memberships</span></li>
+                    <li><span onClick={onContactClick}>Contact Us</span></li>
                     <span className='loginBtn'>Login</span>
                 </Sidebar>
+                
             </NavbarWrapper>
-            
+           
         </NavbarContainer>
     )
 }
