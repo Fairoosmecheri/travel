@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {useState} from 'react'
 import { FiMenu } from 'react-icons/fi'
 import { CgClose } from 'react-icons/cg'
-const Navbar = () => {
+const Navbar = (props) => {
     const [colorChange, setColorchange] = useState(false);
     const [menuStatus, setMenuStatus] = useState(false);
     const changeNavbarColor = () =>{
@@ -16,6 +16,14 @@ const Navbar = () => {
         console.log("DD")
         }
     };
+    const locationRef = props.locationRef
+    const membershipRef = props.membershipRef
+    const onLocationClick = () => {
+        locationRef.current.scrollIntoView()
+    }
+    const onMembershipClick = () => {
+        membershipRef.current.scrollIntoView()
+    }
     window.addEventListener('scroll', changeNavbarColor);
     return (
         <NavbarContainer colorChange = {colorChange}>
@@ -24,8 +32,8 @@ const Navbar = () => {
                     travel. 
                 </NavbarLogo>
                 <NavbarMenu>
-                    <a><span>Locations</span></a>
-                    <a><span>Membership</span></a>
+                    <a><span onClick={onLocationClick}>Locations</span></a>
+                    <a><span onClick={onMembershipClick}>Membership</span></a>
                     <a><span>Contact Us</span></a>
                 </NavbarMenu>
                 <NavbarRightMenu>

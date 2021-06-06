@@ -2,21 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 import { LocationCard } from './LocationCard'
 
-export const Locations = () => {
+export const Locations = (props) => {
     return (
-        <LocationContainer>
-            <LocationHeading>Locations</LocationHeading>
-            <LocationCardView>
-                <LocationCard />
-                <LocationCard />
-                <LocationCard />
-            </LocationCardView> 
-        </LocationContainer>
+        <div ref={props.data}>
+            <LocationContainer>
+                <LocationHeading>Locations</LocationHeading>
+                <LocationCardView>
+                    <LocationCard />
+                    <LocationCard />
+                    <LocationCard />
+                </LocationCardView> 
+            </LocationContainer>
+        </div>
     )
 }
 const LocationContainer = styled.div`
     width: 100vw;
-    height: calc(100vh - 5rem); 
+    // height: calc(100vh - 5rem); 
+    height: 100vh;
     color: white;
     background: url('images/location-bg.jpg');
     background-size: cover;
@@ -42,4 +45,5 @@ const LocationCardView = styled.div`
 `
 const LocationHeading = styled.h2`
     font-size: 50px;
+    margin-top: 20px;
 `

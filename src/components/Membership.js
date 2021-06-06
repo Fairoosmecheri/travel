@@ -1,16 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import MembershipCard from './MembershipCard'
-const Membership = () => {
+const Membership = (props) => {
     return (
-        <MembershipContainer>
-            <MembershipHeading>Memberships</MembershipHeading>
-            <MembershipCardView>
-                <MembershipCard />
-                <MembershipCard />
-                <MembershipCard />
-            </MembershipCardView> 
-        </MembershipContainer>
+        <div ref={props.data}>
+            <MembershipContainer>
+                <MembershipHeading>Memberships</MembershipHeading>
+                <MembershipCardView>
+                    <MembershipCard />
+                    <MembershipCard />
+                    <MembershipCard />
+                </MembershipCardView> 
+            </MembershipContainer>
+        </div>
+        
     )
 }
 
@@ -18,7 +21,7 @@ export default Membership
 
 const MembershipContainer = styled.div`
     width: 100vw;
-    height: calc(100vh - 5rem); 
+    height: 100vh;
     color: black;
     display: flex;
     align-items: center;
@@ -41,4 +44,5 @@ const MembershipCardView = styled.div`
 `
 const MembershipHeading = styled.h2`
     font-size: 50px;
+    margin-top: 20px;
 `
