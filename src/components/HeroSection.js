@@ -32,4 +32,8 @@ const HeroH1 = styled.h1`
     color: white;
     font-family: 'Work Sans', sans-serif;
     letter-spacing: 30px;
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+        letter-spacing: 20px;
+    }
 `

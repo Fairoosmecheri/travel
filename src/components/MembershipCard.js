@@ -22,7 +22,7 @@ const CardContainer = styled.div`
     width: 320px;
     height: 450px;
     background: white;
-    margin: 0 15px;
+    margin: 10px 15px;
     border-radius: 10px;
     background: url('/images/membership-card.png');
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.79);
@@ -58,5 +58,12 @@ const CardContainer = styled.div`
             background: #478f53;
         }
         letter-spacing: 1px;
+    }
+    @media screen and (max-width: 1024px) {
+        width: 280px;
+        height: 400px;
+        h1 {
+            font-size: 20px;
+        }
     }
 `

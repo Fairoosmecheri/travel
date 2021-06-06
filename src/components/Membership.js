@@ -25,11 +25,19 @@ const MembershipContainer = styled.div`
     justify-content: space-around;
     flex-direction: column;
     padding: 20px 0;
+    @media screen and (max-width: 768px) {
+        height: min-content;
+        
+    }
 `
 const MembershipCardView = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        
+    }
 `
 const MembershipHeading = styled.h2`
     font-size: 50px;

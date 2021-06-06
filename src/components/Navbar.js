@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import {useState} from 'react'
+import { FiMenu } from 'react-icons/fi'
+import { CgClose } from 'react-icons/cg'
 const Navbar = () => {
     const [colorChange, setColorchange] = useState(false);
+    const [menuStatus, setMenuStatus] = useState(false);
     const changeNavbarColor = () =>{
         if(window.scrollY >= 50){
         setColorchange(true);
@@ -21,24 +24,78 @@ const Navbar = () => {
                     travel. 
                 </NavbarLogo>
                 <NavbarMenu>
-                    <a><span href="">Locations</span></a>
-                    <a><span href="">Membership</span></a>
-                    <a><span href="">Contact Us</span></a>
+                    <a><span>Locations</span></a>
+                    <a><span>Membership</span></a>
+                    <a><span>Contact Us</span></a>
                 </NavbarMenu>
                 <NavbarRightMenu>
                     <span>Login</span>
                 </NavbarRightMenu>
-                
-            </NavbarWrapper>
-            <NavbarIcon>
-
+                <NavbarIcon>
+                    <FiMenu onClick={() => setMenuStatus(true)} />
                 </NavbarIcon>
+                <Sidebar show={menuStatus}>
+                    <MenuCloseButton>
+                        <CgClose onClick={() => setMenuStatus(false)} /> 
+                    </MenuCloseButton>
+                    <li><span>Locations</span></li>
+                    <li><span>Memberships</span></li>
+                    <li><span>Contact Us</span></li>
+                    <span className='loginBtn'>Login</span>
+                </Sidebar>
+            </NavbarWrapper>
+            
         </NavbarContainer>
     )
 }
 
 export default Navbar
 
+const Sidebar = styled.div`
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: white;
+    width: 300px; 
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
+    transition: transform 0.2s;
+    li {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+        span {
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+    .loginBtn{
+        cursor: pointer;
+        background: #4CA95B;
+        padding: 8px 30px;
+        letter-spacing: 2px;
+        border-radius: 10px;
+        color: white;
+        width: min-content;
+        margin: 15px auto;
+        font-family: 'Oswald', sans-serif;
+        &:hover {
+            background: #478f53;
+        }
+    }
+`
+const MenuCloseButton = styled.div`
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+`
 const NavbarContainer = styled.div`
     height: 5rem;
     width: 100vw;
@@ -63,6 +120,7 @@ const NavbarLogo = styled.div`
     text-align: center;
     margin-top: 10px;
     font-family: 'Racing Sans One', cursive;
+    
 `
 const NavbarMenu = styled.div`
     color: white;
@@ -98,7 +156,9 @@ const NavbarMenu = styled.div`
             }
         }
     }
-    
+    @media screen and (max-width: 760px) {
+        display: none;
+    }
 `
 const NavbarRightMenu = styled.div`
     color: white;
@@ -115,7 +175,20 @@ const NavbarRightMenu = styled.div`
             background: #478f53;
         }
     }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 const NavbarIcon = styled.div`
-
+    color: white;
+    font-size: 40px;
+    margin-top: 30px;
+    display: none;
+    cursor: pointer;
+    FiMenu {
+        
+    }
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 `

@@ -26,7 +26,7 @@ const CardContainer = styled.div`
     width: 320px;
     height: 450px;
     background: white;
-    margin: 0 15px;
+    margin: 10px 15px;
     border-radius: 10px;
     background: rgba( 255, 255, 255, 0.10 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -39,10 +39,20 @@ const CardContainer = styled.div`
     background-attachment: fixed;
     align-items: center;
     padding: 10px;
+    @media screen and (max-width: 1024px) {
+        width: 280px;
+        height: 400px;
+        h1 {
+            font-size: 20px;
+        }
+    }
 `
 const CardHeading = styled.div`
     font-family: 'Teko', sans-serif;
     font-size: 30px;
+    @media screen and (max-width: 1024px) {
+        font-size: 25px;
+    }
 `
 const CardImage = styled.div`
     img {
@@ -50,7 +60,11 @@ const CardImage = styled.div`
         height: 200px;
         object-fit: cover;
         border-radius: 10px;
-    }    
+        @media screen and (max-width: 1024px) {
+            width: 260px;
+            height: 160px;
+        }
+    } 
 `
 const CardDescription = styled.p`
     margin-top: 15px;

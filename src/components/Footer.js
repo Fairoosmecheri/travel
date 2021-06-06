@@ -35,48 +35,72 @@ const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 10vw;
-    border-top: 1px solid black;
+    background: black;
+    color: white;
+    padding: 20px;
 `
 const FooterContent = styled.div`
-    display: flex
+    display: flex;
+    width: 75vw;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 50vw;
+        margin: 0 25vw;
+    }
+    
 `
 const Copyright = styled.div`
-    margin: 30px 0;
+    width: 80vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 10px;
 `
 const Detail = styled.div`
-    width: 400px;
-    padding-left: 100px;
-    border-right: 1px solid #103334;
+    padding-left: 1vw; 
+    width: 100%;
+    margin: 10px;
     h2 {
         font-family: 'Racing Sans One', cursive;
     }
     p {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Roboto', sans-serif;
+    }
+    @media screen and (max-width: 1440px) {
+        padding-left: 0;
     }
 `
 const Pages = styled.div`
-    width: 400px;
-    padding-left: 80px;
+    padding-left: 1vw; 
     display: flex;
+    width: 100%;
+    margin: 10px;
+    
     flex-direction: column;
-    border-right: 1px solid #103334;
     h3 {
         margin-bottom: 5px;
     }
     span {
         margin-top: 5px;
         cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+    }
+    @media screen and (max-width: 1440px) {
+        padding-left: 0;
     }
 `
 const Social = styled.div`
-    width: 400px;
-    padding-left: 80px;
+    padding-left: 1vw; 
+    width: 100%;
+    margin: 10px;
     h3 {
         margin-bottom: 5px;
     }
     span {
         margin-right: 8px;
         cursor: pointer;
+    }
+    @media screen and (max-width: 1440px) {
+        padding-left: 0;
     }
 `
