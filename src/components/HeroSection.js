@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const HeroSection = () => {
+const HeroSection = (props) => {
     return (
-        <HeroContainer>
-            <HeroContent>
-                <HeroH1>DISCOVER</HeroH1>
-            </HeroContent>
-        </HeroContainer>
+        // <div >
+            <HeroContainer ref={props.data}>
+                <HeroContent>
+                    <HeroH1>DISCOVER</HeroH1>
+                </HeroContent>
+            </HeroContainer>
+        // </div>
+        
     )
 }
 

@@ -8,16 +8,22 @@ import Footer from './Footer'
 const Home = () => {
     const locationRef = useRef(null)
     const membershipRef = useRef(null)
+    const heroRef = useRef(null)
     return (
         <HomeContainer>
             <Navbar 
                 locationRef = {locationRef}
                 membershipRef = {membershipRef}
+                heroRef = {heroRef}
             />
-            <HeroSection />
+            <HeroSection data={heroRef} />
             <Locations data={locationRef}/>
             <Membership data={membershipRef}/>
-            <Footer />
+            <Footer 
+                locationRef = {locationRef}
+                membershipRef = {membershipRef}
+                heroRef = {heroRef}
+            />
         </HomeContainer>
     )
 }

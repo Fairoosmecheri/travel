@@ -18,17 +18,21 @@ const Navbar = (props) => {
     };
     const locationRef = props.locationRef
     const membershipRef = props.membershipRef
+    const heroRef = props.heroRef
     const onLocationClick = () => {
         locationRef.current.scrollIntoView()
     }
     const onMembershipClick = () => {
         membershipRef.current.scrollIntoView()
     }
+    const onLogoClick = () => {
+        heroRef.current.scrollIntoView()
+    }
     window.addEventListener('scroll', changeNavbarColor);
     return (
         <NavbarContainer colorChange = {colorChange}>
             <NavbarWrapper>
-                <NavbarLogo>
+                <NavbarLogo onClick={onLogoClick}>
                     travel. 
                 </NavbarLogo>
                 <NavbarMenu>

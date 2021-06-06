@@ -1,19 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
-const Footer = () => {
+const Footer = (props) => {
+    const locationRef = props.locationRef
+    const membershipRef = props.membershipRef
+    const heroRef = props.heroRef
+    const onLocationClick = () => {
+        locationRef.current.scrollIntoView()
+    }
+    const onMembershipClick = () => {
+        membershipRef.current.scrollIntoView()
+    }
+    const onHomeClick = () => {
+        heroRef.current.scrollIntoView()
+    }
     return (
         <FooterContainer>
             <FooterContent>
                 <Detail>
-                    <h2>travel.</h2>
+                    <h2 onClick={onHomeClick}>travel.</h2>
                     <p>Travel is an outdoor recreational<br /> center which celebrates nature<br /> and it's inexplicable beauty.</p>
                 </Detail>
                 <Pages>
                     <h3>Pages</h3>
-                    <span>Home</span>
-                    <span>Locations</span>
-                    <span>Memberships</span>
+                    <span onClick={onHomeClick}>Home</span>
+                    <span onClick={onLocationClick}>Locations</span>
+                    <span onClick={onMembershipClick}>Memberships</span>
                     <span>Contact Us</span>
                 </Pages>
                 <Social>
@@ -62,6 +74,7 @@ const Detail = styled.div`
     margin: 10px;
     h2 {
         font-family: 'Racing Sans One', cursive;
+        cursor: pointer;
     }
     p {
         font-family: 'Roboto', sans-serif;
